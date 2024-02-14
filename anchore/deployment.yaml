@@ -1,9 +1,9 @@
 apiVersion: apps/v1
-kind: Deployment
+kind: Pod
 metadata:
   name: nodejs-app
 spec:
-  replicas: 3
+  replicas: 1
   selector:
     matchLabels:
       app: nodejs
@@ -14,6 +14,6 @@ spec:
     spec:
       containers:
       - name: nodejs
-        image: node:latest
+        image: node:alpine
         ports:
         - containerPort: 3000
